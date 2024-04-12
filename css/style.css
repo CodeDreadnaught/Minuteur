@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap');
+@import url("utility.css");
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: "Nunito", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+}
+nav {
+    height: 8dvh;
+    box-shadow: 0 0.298256rem 0.74564rem rgba(0, 0, 0, 0.1);
+}
+nav .logo a {
+    text-decoration: none;
+    color: black;
+    font-weight: 550;
+}
+nav .logo a:hover {
+    letter-spacing: 0.09rem;
+    color: brown;
+}
+main {
+    min-height: 85dvh;
+}
+.app-wrapper {
+    height: 30rem;
+    width: 90%;
+    border: 1px solid black;
+}
+.timer input {
+    display: inline-block;
+    width: 8rem;
+    height: 8rem;
+    color: black;
+    font: inherit;
+    border: none;
+    background: transparent;
+    text-indent: 1rem;
+    font-size: 4rem;
+}
+.timer input::placeholder {
+    color: black;
+}
+.timer input:not(:last-child) {
+    margin-right: 2rem;
+}
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+    display: none;
+}
+.timer input:focus {
+    outline: 1px solid black;
+}
+.play-button.active:active {
+    transform: scale(1.5);
+}
+.play-button.hidden {
+    position: fixed;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+}
+.play-button button {
+    width: 6rem;
+    height: 6rem;
+    font-size: 2rem;
+    background: black;
+    border: none;
+    border-radius: 50%;
+    color: white;
+}
+.time-out-animation {
+    border: none;
+    animation: blink 0.8s ease-in-out alternate infinite;
+}
+footer {
+    height: 7dvh;
+}
+@keyframes blink {
+    0% {
+        border: none;
+    }    
+    50% {
+        border: 5px solid red;
+        transform: translateY(1.5rem);
+    }
+    100% {
+        border: none;
+    }
+}
