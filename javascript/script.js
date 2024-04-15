@@ -45,7 +45,7 @@ class TimerMethods {
             startButtonWrapper.classList.add("hidden");
         }
 
-        if (currentInputValue.includes(".") {
+        if (currentInputValue.includes(".")) {
             const floatingNumberIndex = currentInputValue.indexOf(".");
             const nonFloatingNumber = event.target.value.splice(floatingNumberIndex, 1);
 
