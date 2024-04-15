@@ -29,9 +29,12 @@ class TimerMethods {
     static regulateInput(event) {
         let currentInputValue = event.target.value;
 
-        console.log(currentInputValue);
+        console.log(currentInputValue, "END");
+        if (currentInputValue.includes("")) {
+            e.preventDefault();
+        }
     
-        if (currentInputValue.length > 3 || currentInputValue.includes(" ")) {
+        if (currentInputValue.length > 3) {
             const currentInputValueArray = currentInputValue.split("");
             currentInputValueArray.pop();
             const currentInputValueRegulated = currentInputValueArray.join("");
