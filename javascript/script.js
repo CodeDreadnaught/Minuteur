@@ -28,9 +28,12 @@ class TimerMethods {
 
     static regulateInput(event) {
         let currentInputValue = event.target.value;
-    
-        if (currentInputValue.length > 3 || currentInputValue.includes(7)) {
+
+        if (currentInputValue.includes("7")) {
             console.log("Timer");
+        }
+    
+        if (currentInputValue.length > 3) {
             const currentInputValueArray = currentInputValue.split("");
             currentInputValueArray.pop();
             const currentInputValueRegulated = currentInputValueArray.join("");
