@@ -31,7 +31,7 @@ class TimerMethods {
 
         console.log(currentInputValue, "END");
         if (currentInputValue.includes("")) {
-            e.preventDefault();
+            event.preventDefault();
         }
     
         if (currentInputValue.length > 3) {
