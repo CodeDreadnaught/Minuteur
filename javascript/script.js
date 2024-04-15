@@ -29,7 +29,7 @@ class TimerMethods {
     static regulateInput(event) {
         let currentInputValue = event.target.value;
     
-        if (currentInputValue.length > 3) {
+        if (currentInputValue.length > 3 || currentInputValue.includes(".")) {
             const currentInputValueArray = currentInputValue.split("");
             currentInputValueArray.pop();
             const currentInputValueRegulated = currentInputValueArray.join("");
@@ -43,13 +43,6 @@ class TimerMethods {
             startButtonWrapper.classList.remove("hidden");
         } else {
             startButtonWrapper.classList.add("hidden");
-        }
-
-        if (currentInputValue.includes(".")) {
-            const floatingNumberIndex = currentInputValue.indexOf(".");
-            const nonFloatingNumber = event.target.value.slice(-1);
-
-            event.target.value = nonFloatingNumber;
         }
     }
 
