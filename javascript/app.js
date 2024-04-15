@@ -12,18 +12,18 @@ allInputUI = document.querySelectorAll(".timer input");
 
 (function loadAllEventListeners() {
     hoursUI.addEventListener("keyup", TimerMethods.regulateInput);
-    hoursUI.addEventListener("keyup", TimerMethods.preventFloatingNumbers);
+    hoursUI.addEventListener("beforeinput", TimerMethods.preventFloatingNumbers);
     hoursUI.addEventListener("click", TimerMethods.regulateZeroInput);
     hoursUI.addEventListener("blur", TimerMethods.ensureNonSingleDigit);
 
     minutesUI.addEventListener("keyup", TimerMethods.regulateInput);
-    minutesUI.addEventListener("keyup", TimerMethods.preventFloatingNumbers);
+    minutesUI.addEventListener("beforeinput", TimerMethods.preventFloatingNumbers);
     minutesUI.addEventListener("click", TimerMethods.regulateZeroInput);
     minutesUI.addEventListener("blur", TimerMethods.ensureNonSingleDigit);
     minutesUI.addEventListener("keyup", TimerMethods.correctInput);
 
     secondsUI.addEventListener("keyup", TimerMethods.regulateInput);
-    secondsUI.addEventListener("keyup", TimerMethods.preventFloatingNumbers);
+    secondsUI.addEventListener("beforeinput", TimerMethods.preventFloatingNumbers);
     secondsUI.addEventListener("click", TimerMethods.regulateZeroInput);
     secondsUI.addEventListener("blur", TimerMethods.ensureNonSingleDigit);
     secondsUI.addEventListener("keyup", TimerMethods.correctInput);
