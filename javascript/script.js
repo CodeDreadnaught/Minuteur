@@ -32,6 +32,8 @@ class TimerMethods {
         if (currentInputValue.includes(".")) {
             console.log("Timer");
         }
+
+        console.log(currentInputValue);
     
         if (currentInputValue.length > 3 || currentInputValue.includes(".")) {
             const currentInputValueArray = currentInputValue.split("");
