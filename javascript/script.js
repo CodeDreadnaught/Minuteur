@@ -13,6 +13,14 @@ class TimerMethods {
         }
     }
 
+    static preventFloatingNumbers(event) {
+        const char = event.data;
+        
+        if (char != null && char !== '' && !/^[0-9]*$/.test(char)) {
+            event.preventDefault();
+        }
+    }
+    
     static regulateZeroInput(event) {
         let currentInputValue = event.target.value;
 
@@ -28,12 +36,7 @@ class TimerMethods {
 
     static regulateInput(event) {
         let currentInputValue = event.target.value;
-
-        console.log(currentInputValue, "END");
-        if (currentInputValue.includes("")) {
-            event.preventDefault();
-        }
-    
+        
         if (currentInputValue.length > 3) {
             const currentInputValueArray = currentInputValue.split("");
             currentInputValueArray.pop();
