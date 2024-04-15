@@ -50,6 +50,7 @@ class TimerMethods {
             const nonFloatingNumber = event.target.value.splice(floatingNumberIndex, 1);
 
             event.target.value = nonFloatingNumber;
+        }
     }
 
     static startCountDown() {
