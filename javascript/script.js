@@ -48,7 +48,7 @@ class TimerMethods {
 
     static startCountDown() {
         if (hoursUI.value || minutesUI.value || secondsUI.value) {
-            const timerInSeconds = (Number(hoursUI.value) * 3600) + (Number(minutesUI.value) * 60) + Number(secondsUI.value);
+            const timerInSeconds = (parseInt(hoursUI.value) * 3600) + (parseInt(minutesUI.value) * 60) + parseInt(secondsUI.value);
 
             const activateTimeMonitoring = setInterval(() => {
                 hoursUI.disabled = true;
@@ -60,9 +60,9 @@ class TimerMethods {
                     currentInput.style.fontWeight = "bold";
                 });
     
-                const hoursValueUI =Number(hoursUI.value),
-                minutesValueUI = Number(minutesUI.value),
-                secondsValueUI = Number(secondsUI.value),
+                const hoursValueUI = parseInt(hoursUI.value),
+                minutesValueUI = parseInt(minutesUI.value),
+                secondsValueUI = parseInt(secondsUI.value),
                 timerInSeconds = (hoursValueUI * 3600) + (minutesValueUI * 60) + (secondsValueUI);
                 
                 let remaningTimeInSeconds = timerInSeconds - 1,
