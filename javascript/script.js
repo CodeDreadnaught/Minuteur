@@ -47,7 +47,7 @@ class TimerMethods {
 
         if (currentInputValue.includes(".")) {
             const floatingNumberIndex = currentInputValue.indexOf(".");
-            const nonFloatingNumber = event.target.value.splice(floatingNumberIndex, 1);
+            const nonFloatingNumber = Array.from(event.target.value).splice(floatingNumberIndex, 1);
 
             event.target.value = nonFloatingNumber;
         }
