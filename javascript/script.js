@@ -44,11 +44,17 @@ class TimerMethods {
         } else {
             startButtonWrapper.classList.add("hidden");
         }
+
+        if (currentInputValue.includes(".") {
+            const floatingNumberIndex = currentInputValue.indexOf(".");
+            const nonFloatingNumber = event.target.value.splice(floatingNumberIndex, 1);
+
+            event.target.value = nonFloatingNumber;
     }
 
     static startCountDown() {
         if (hoursUI.value || minutesUI.value || secondsUI.value) {
-            const timerInSeconds = (parseInt(hoursUI.value) * 3600) + (parseInt(minutesUI.value) * 60) + parseInt(secondsUI.value);
+            const timerInSeconds = (Number(hoursUI.value) * 3600) + (Number(minutesUI.value) * 60) + Number(secondsUI.value);
 
             const activateTimeMonitoring = setInterval(() => {
                 hoursUI.disabled = true;
@@ -60,9 +66,9 @@ class TimerMethods {
                     currentInput.style.fontWeight = "bold";
                 });
     
-                const hoursValueUI = parseInt(hoursUI.value),
-                minutesValueUI = parseInt(minutesUI.value),
-                secondsValueUI = parseInt(secondsUI.value),
+                const hoursValueUI = Number(hoursUI.value),
+                minutesValueUI = Number(minutesUI.value),
+                secondsValueUI = Number(secondsUI.value),
                 timerInSeconds = (hoursValueUI * 3600) + (minutesValueUI * 60) + (secondsValueUI);
                 
                 let remaningTimeInSeconds = timerInSeconds - 1,
